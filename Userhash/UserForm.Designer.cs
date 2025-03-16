@@ -44,15 +44,15 @@
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.Location = new System.Drawing.Point(87, 33);
+            this.txtNewPassword.Location = new System.Drawing.Point(15, 52);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(150, 20);
+            this.txtNewPassword.Size = new System.Drawing.Size(201, 20);
             this.txtNewPassword.TabIndex = 2;
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(162, 64);
+            this.btnChangePassword.Location = new System.Drawing.Point(141, 78);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(75, 23);
             this.btnChangePassword.TabIndex = 3;
@@ -62,7 +62,7 @@
             // 
             // btnBackToLogin
             // 
-            this.btnBackToLogin.Location = new System.Drawing.Point(12, 64);
+            this.btnBackToLogin.Location = new System.Drawing.Point(15, 78);
             this.btnBackToLogin.Name = "btnBackToLogin";
             this.btnBackToLogin.Size = new System.Drawing.Size(120, 23);
             this.btnBackToLogin.TabIndex = 4;
@@ -74,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(249, 94);
+            this.ClientSize = new System.Drawing.Size(239, 120);
             this.Controls.Add(this.btnBackToLogin);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.txtNewPassword);

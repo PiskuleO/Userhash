@@ -53,12 +53,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 66);
+            this.ClientSize = new System.Drawing.Size(261, 62);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtAdminPassword);
             this.Controls.Add(this.label1);
             this.Name = "AdminLoginForm";
-            this.Text = "Admin ověření";
+            this.Text = "Administrátorské přihlášení";
             this.ResumeLayout(false);
             this.PerformLayout();
 

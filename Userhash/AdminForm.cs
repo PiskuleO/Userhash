@@ -23,27 +23,6 @@ namespace Userhash
             }
         }
 
-        private void btnResetPassword_Click(object sender, EventArgs e)
-        {
-            if (lstUsers.SelectedItem != null)
-            {
-                string selectedUser = lstUsers.SelectedItem.ToString();
-                User user = userManager.FindUser(selectedUser);
-
-                if (user != null)
-                {
-                    string newPassword = txtNewPassword.Text;
-                    user.PasswordHash = User.HashPassword(newPassword);
-                    userManager.SaveToXml("users.xml");
-                    MessageBox.Show($"Heslo uživatele {user.Username} bylo změněno.", "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vyberte uživatele ze seznamu.", "Upozornění", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             string newUsername = txtNewUsername.Text;
@@ -70,11 +49,61 @@ namespace Userhash
             txtNewPassword.Text = "";
         }
 
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            if (lstUsers.SelectedItem != null)
+            {
+                string selectedUser = lstUsers.SelectedItem.ToString();
+                User user = userManager.FindUser(selectedUser);
+
+                if (user != null)
+                {
+                    userManager.Users.Remove(user);
+                    userManager.SaveToXml("users.xml");
+                    LoadUsers();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte uživatele ze seznamu.", "Upozornění", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            if (lstUsers.SelectedItem != null)
+            {
+                string selectedUser = lstUsers.SelectedItem.ToString();
+                User user = userManager.FindUser(selectedUser);
+
+                if (user != null)
+                {
+                    EditUserForm editForm = new EditUserForm(user, userManager);
+                    editForm.ShowDialog();
+                    LoadUsers();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte uživatele ze seznamu.", "Upozornění", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void btnBackToLogin_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
